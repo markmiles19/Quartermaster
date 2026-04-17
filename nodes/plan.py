@@ -6,7 +6,7 @@ def plan(state):
 
     if final_balance < 0:
         risk = "high"
-    elif final_balance < 500:
+    elif final_balance <= 500:
         risk = "medium"
     else:
         risk = "low"

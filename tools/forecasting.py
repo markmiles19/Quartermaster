@@ -5,6 +5,7 @@ def forecast_cash_flow(financial_data, days=30):
     projection = []
 
     for day in range(days):
+        # This is where we predict the new balance.
         balance += daily_net
         projection.append(balance)
 
