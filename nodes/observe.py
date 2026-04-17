@@ -1,4 +1,5 @@
 from tools.sql_tool import run_sql
+from utils.logger import log_step
 
 def observe(state):
     result = run_sql("SELECT balance, daily_net FROM finances LIMIT 1;")

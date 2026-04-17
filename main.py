@@ -1,8 +1,11 @@
 from graph.agent_graph import graph
 
-def main():
+def main(balance, daily_net):
     state = {
-        "financial_data": {},
+        "financial_data": {
+            "Balance": balance,
+            "daily_net": daily_net
+        },
         "forecast": {},
         "risk": "",
         "decision": "",
@@ -23,4 +26,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # These are only test values for right now.
+    # Later we will pass in the actual balance and daily net once we get this figured out.
+    main(5000, -150)
