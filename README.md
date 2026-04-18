@@ -45,7 +45,7 @@ This structure makes it easy to later replace test values with real financial da
 ### 1. Create a Virtual Environment  
 **(Only run once per session)**
 
-```bash
+
 python3 -m venv venv
 
 Activate it:
@@ -98,3 +98,46 @@ Requirements
 Python 3.9+
 SQLite (included with Python)
 See requirements.txt for required packages
+
+## Evaluation
+
+The project includes an evaluation script that tests whether the Quartermaster system is working correctly.
+
+The evaluation checks:
+- If the agent runs without crashing
+- If all required outputs are returned
+- If results are consistent across runs
+- If the database is accessible and returning data
+
+---
+
+## Running the Evaluation
+
+Make sure your virtual environment is activated and the database has been set up first:
+
+
+python setup_db.py
+
+Then run the evaluation script:
+
+python evaluate.py
+What You Should See
+
+When the evaluation runs, it will step through each test:
+
+Runs the agent graph
+Checks required output fields
+Compares results for consistency
+Tests database access
+
+At the end, you will see:
+
+Evaluation complete: ALL TESTS PASSED ✅
+
+or messages showing which step failed.
+
+Notes
+The evaluation uses test data from the database
+It is meant for debugging and verification, not production use
+If a test fails, check terminal output for the exact step that failed
+```bash
