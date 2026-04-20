@@ -6,7 +6,7 @@ Quartermaster is a Python-based agent system designed to analyze financial data,
 
 ## Project Structure
 
-
+```bash
 quartermaster/
 ├── graph/
 │ └── agent_graph.py # Defines the agent workflow and logic
@@ -18,6 +18,7 @@ quartermaster/
 ├── setup_db.py # Initializes and seeds the database
 ├── requirements.txt # Python dependencies
 └── README.md # Project documentation
+```
 
 
 ---
@@ -45,30 +46,44 @@ This structure makes it easy to later replace test values with real financial da
 ### 1. Create a Virtual Environment  
 **(Only run once per session)**
 
-
+```bash
 python3 -m venv venv
+```
 
 Activate it:
 
 macOS / Linux
 
+```bash
 source venv/bin/activate
+```
 
 Windows
 
+```bash
 venv\Scripts\activate
+```
+
 2. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
 3. Initialize the Database
 
 This creates and prepares the SQLite database used by the agent.
 
+```bash
 python setup_db.py
 Running the Program
+```
 
 To execute the Quartermaster Agent and view the output:
 
+```bash
 python main.py
+```
 
 The output includes:
 
@@ -81,7 +96,9 @@ Logs
 
 Execution logs are saved to:
 
+```bash
 logs/run_logs.txt
+```
 
 These logs are useful for debugging and tracking agent behavior.
 
@@ -89,15 +106,25 @@ Debugging (Optional)
 
 To directly view the database contents, uncomment this line in main.py:
 
+```bash
 print(run_sql("SELECT * FROM finances;"))
-Notes
-Current financial values are test values only
-Designed to be modular and easy to extend
-Additional agents or logic can be added to the graph workflow
-Requirements
+```
+
+**Notes**
+
+Current financial values are test values only.
+
+Designed to be modular and easy to extend.
+
+Additional agents or logic can be added to the graph workflow.
+
+**Requirements**
+
 Python 3.9+
+
 SQLite (included with Python)
-See requirements.txt for required packages
+
+See requirements.txt for required packages.
 
 ## Evaluation
 
