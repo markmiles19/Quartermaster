@@ -87,12 +87,12 @@ python main.py
 
 The output includes:
 
-Financial data loaded from the database
-Forecasted final balance
-Risk assessment
-The agent’s decision
-The result of that decision
-Logs
+- Financial data loaded from the database
+- Forecasted final balance
+- Risk assessment
+- The agent’s decision
+- The result of that decision
+- Logs
 
 Execution logs are saved to:
 
@@ -112,11 +112,9 @@ print(run_sql("SELECT * FROM finances;"))
 
 **Notes**
 
-Current financial values are test values only.
-
-Designed to be modular and easy to extend.
-
-Additional agents or logic can be added to the graph workflow.
+- Current financial values are test values only.
+- Designed to be modular and easy to extend.
+- Additional agents or logic can be added to the graph workflow.
 
 **Requirements**
 
@@ -142,13 +140,17 @@ The evaluation checks:
 
 Make sure your virtual environment is activated and the database has been set up first:
 
-
+```bash
 python setup_db.py
+```
 
 Then run the evaluation script:
 
+```bash
 python evaluate.py
-What You Should See
+```
+
+**What You Should See**
 
 When the evaluation runs, it will step through each test:
 
@@ -159,12 +161,14 @@ Tests database access
 
 At the end, you will see:
 
-Evaluation complete: ALL TESTS PASSED ✅
-
-or messages showing which step failed.
-
-Notes
-The evaluation uses test data from the database
-It is meant for debugging and verification, not production use
-If a test fails, check terminal output for the exact step that failed
 ```bash
+Evaluation complete: ALL TESTS PASSED ✅
+```
+
+Or you will see messages showing which step failed.
+
+**Notes**
+
+- The evaluation uses test data from the database.
+- It is meant for debugging and verification, not production use
+- If a test fails, check terminal output for the exact step that failed
