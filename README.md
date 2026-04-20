@@ -52,25 +52,25 @@ python3 -m venv venv
 
 Activate it:
 
-macOS / Linux
+**macOS / Linux**
 
 ```bash
 source venv/bin/activate
 ```
 
-Windows
+**Windows**
 
 ```bash
 venv\Scripts\activate
 ```
 
-2. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Initialize the Database
+### 3. Initialize the Database
 
 This creates and prepares the SQLite database used by the agent.
 
@@ -102,7 +102,7 @@ logs/run_logs.txt
 
 These logs are useful for debugging and tracking agent behavior.
 
-Debugging (Optional)
+**Debugging (Optional)**
 
 To directly view the database contents, uncomment this line in main.py:
 
