@@ -118,11 +118,9 @@ print(run_sql("SELECT * FROM finances;"))
 
 **Requirements**
 
-Python 3.9+
-
-SQLite (included with Python)
-
-See requirements.txt for required packages.
+- Python 3.9+
+- SQLite (included with Python)
+- See requirements.txt for required packages.
 
 ## Evaluation
 
