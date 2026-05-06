@@ -43,11 +43,30 @@ This structure makes it easy to later replace test values with real financial da
 
 ## Setup Instructions
 
-### 1. Create a Virtual Environment  
-**(Only run once per session)**
+### 1. Install Python 3.11 (Required)
+
+Quartermaster depends on libraries that are not compatible with Python 3.14.
+
+Verify your Python version:
 
 ```bash
-python3 -m venv venv
+python3 --version
+```
+
+If it is not 3.11, install Python 3.11.
+
+On macOS (using Homebrew):
+
+```bash
+brew install python@3.11
+```
+
+---
+
+### 2. Create a Virtual Environment
+
+```bash
+python3.11 -m venv venv
 ```
 
 Activate it:
@@ -64,28 +83,65 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-### 2. Install Dependencies
+---
+
+### 3. Upgrade pip
+
+```bash
+pip install --upgrade pip
+```
+
+---
+
+### 4. Install CrewAI (Verify First)
+
+```bash
+pip install crewai
+```
+
+Verify installation:
+
+```bash
+python -c "from crewai import Agent; print('CrewAI installed successfully')"
+```
+
+The console may show an error related to tiktoken. Ignore this, as it should have little to no impact.
+
+---
+
+### 5. Install Remaining Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Initialize the Database
+---
 
-This creates and prepares the SQLite database used by the agent.
+### 6. Initialize the Database
 
 ```bash
 python setup_db.py
-Running the Program
 ```
 
-To execute the Quartermaster Agent and view the output:
+---
+
+### 7. Run the Agent
 
 ```bash
 python main.py
 ```
 
-The output includes:
+---
+
+### 8. (Optional) Run Evaluation Tests
+
+```bash
+python EvaluationSet.py
+```
+
+---
+
+### Output Includes
 
 - Financial data loaded from the database
 - Forecasted final balance
@@ -102,25 +158,7 @@ logs/run_logs.txt
 
 These logs are useful for debugging and tracking agent behavior.
 
-**Debugging (Optional)**
-
-To directly view the database contents, uncomment this line in main.py:
-
-```bash
-print(run_sql("SELECT * FROM finances;"))
-```
-
-**Notes**
-
-- Current financial values are test values only.
-- Designed to be modular and easy to extend.
-- Additional agents or logic can be added to the graph workflow.
-
-**Requirements**
-
-- Python 3.9+
-- SQLite (included with Python)
-- See requirements.txt for required packages.
+---
 
 ## Evaluation
 

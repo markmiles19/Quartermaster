@@ -1,5 +1,10 @@
 from graph.agent_graph import graph
 from tools.sql_tool import run_sql
+from dotenv import load_dotenv
+load_dotenv()
+##TEMPORARY
+import os
+print("API KEY LOADED:", os.getenv("OPENAI_API_KEY") is not None)
 
 def main():
     state = {

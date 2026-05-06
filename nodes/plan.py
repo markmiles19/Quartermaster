@@ -1,22 +1,23 @@
 from utils.logger import log_step
+from agents.financial_crew import run_financial_analysis
 
 def plan(state):
     forecast = state["forecast"]
-    final_balance = forecast["final_balance"]
 
-    if final_balance < 0:
+    result = run_financial_analysis(
+    state["financial_data"],
+    forecast
+    )
+
+    output = str(result).lower()
+    if "high" in output:
         risk = "high"
-    elif final_balance <= 500:
+    elif "medium" in output:
         risk = "medium"
     else:
         risk = "low"
 
-    if risk == "high":
-        decision = "Reduce expenses and delay non-critical payments"
-    elif risk == "medium":
-        decision = "Monitor closely and reduce discretionary spending"
-    else:
-        decision = "No immediate action required"
+    decision = str(result)
 
     state["risk"] = risk
     state["decision"] = decision
