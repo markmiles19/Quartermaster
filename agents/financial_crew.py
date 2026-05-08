@@ -25,7 +25,33 @@ def run_financial_analysis(financial_data, forecast):
         Forecast:
         Final Balance: {final_balance}
 
-        Determine the financial risk level (low, medium, high) and explain why.
+        STEP 1: Determine the financial risk level:
+        - low
+        - medium
+        - high
+
+        STEP 2: Choose whether a tool is needed:
+
+        1. forecast
+        - Use this if cash flow projections should be recalculated
+        or future financial trends require deeper analysis.
+        - Example use case:
+        uncertain cash runway or changing daily net values.
+
+        2. email
+        - Use this if management or stakeholders should be notified.
+        - Example use case:
+        severe financial risk requiring escalation.
+        
+        YOU MUST RESPOND IN EXACT FORMAT:
+
+        RISK: <low|medium|high>
+
+        TOOL: <forecast|email|none>
+
+        REASON: <brief explanation>
+
+        If no tool is necessary, do not select one.
         """,
         agent=analyst,
         expected_output="A short explanation of the financial risk level (low, medium, or high)."

@@ -6,5 +6,8 @@ def analyze(state):
 
     state["forecast"] = forecast
 
+    log_step("ANALYZE", forecast)
+
     print("ANALYZE:", forecast["final_balance"])
+    
     return state
